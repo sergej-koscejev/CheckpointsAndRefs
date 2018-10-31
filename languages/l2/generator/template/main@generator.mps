@@ -18,11 +18,23 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
+      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
+        <child id="1081773367579" name="rightExpression" index="3uHU7w" />
+        <child id="1081773367580" name="leftExpression" index="3uHU7B" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
     </language>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
@@ -41,6 +53,7 @@
       <concept id="8612733435392875258" name="jetbrains.mps.lang.generator.structure.ReferenceReductionRule" flags="lg" index="mf$An">
         <reference id="8612733435392875261" name="link" index="mf$Ag" />
         <child id="3145152795238947898" name="referentFunction" index="2vbCZR" />
+        <child id="518316622382812505" name="conditionFunction" index="39vUdx" />
       </concept>
       <concept id="1168619357332" name="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" flags="lg" index="n94m4">
         <reference id="1168619429071" name="applicableConcept" index="n9lRv" />
@@ -49,6 +62,7 @@
         <reference id="1200911342686" name="sourceConcept" index="2rTdP9" />
         <reference id="1200913004646" name="targetConcept" index="2rZz_L" />
       </concept>
+      <concept id="1167168920554" name="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" flags="in" index="30G5F_" />
       <concept id="1167169188348" name="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" flags="nn" index="30H73N" />
       <concept id="1167169308231" name="jetbrains.mps.lang.generator.structure.BaseMappingRule" flags="ng" index="30H$t8">
         <reference id="1167169349424" name="applicableConcept" index="30HIoZ" />
@@ -84,6 +98,7 @@
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
       </concept>
+      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
@@ -121,6 +136,29 @@
                     <ref role="3Tt5mk" to="x4za:4pHE$TeuCz4" resolve="entity" />
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="30G5F_" id="6O76fiQFw_J" role="39vUdx">
+        <node concept="3clFbS" id="6O76fiQFw_K" role="2VODD2">
+          <node concept="3SKdUt" id="6O76fiQFQWm" role="3cqZAp">
+            <node concept="3SKdUq" id="6O76fiQFQWo" role="3SKWNk">
+              <property role="3SKdUp" value="Only execute this rule once" />
+            </node>
+          </node>
+          <node concept="3clFbF" id="6O76fiQFy9p" role="3cqZAp">
+            <node concept="3clFbC" id="6O76fiQFzMt" role="3clFbG">
+              <node concept="10Nm6u" id="6O76fiQFzMJ" role="3uHU7w" />
+              <node concept="2OqwBi" id="6O76fiQFz3v" role="3uHU7B">
+                <node concept="2OqwBi" id="6O76fiQFymB" role="2Oq$k0">
+                  <node concept="30H73N" id="6O76fiQFy9o" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="6O76fiQFyAi" role="2OqNvi">
+                    <ref role="3Tt5mk" to="x4za:4pHE$TeuCz4" resolve="entity" />
+                  </node>
+                </node>
+                <node concept="1mfA1w" id="6O76fiQFznc" role="2OqNvi" />
               </node>
             </node>
           </node>
